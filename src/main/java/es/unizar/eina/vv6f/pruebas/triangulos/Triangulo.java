@@ -25,6 +25,10 @@ public class Triangulo {
      *            dos lados menores es menor o igual que la longitud del más largo.
      */
     public Triangulo(int a, int b, int c) throws IllegalArgumentException {
+        // Desigualdad triangular
+        if((a + b <= c) || (a + c <= b) || (b + c <= a)){
+            throw new IllegalArgumentException();
+        }
         this.a = a;
         this.b = b;
         this.c = c;
@@ -37,6 +41,9 @@ public class Triangulo {
     public TipoTriangulo tipo() {
         if (a == b && b == c){
             return TipoTriangulo.EQUILATERO;
+        }
+        else if(a != b && b != c && a != c) {
+            return TipoTriangulo.ESCALENO;
         }
         else{
             return TipoTriangulo.ISOSCELES;
