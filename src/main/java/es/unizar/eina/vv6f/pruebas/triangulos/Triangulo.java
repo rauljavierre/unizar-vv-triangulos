@@ -6,6 +6,10 @@ package es.unizar.eina.vv6f.pruebas.triangulos;
  */
 public class Triangulo {
 
+    private int a;
+    private int b;
+    private int c;
+
     /**
      * Construye un triángulo cuyos lados miden a, b y c unidades.
      *
@@ -21,6 +25,9 @@ public class Triangulo {
      *            dos lados menores es menor o igual que la longitud del más largo.
      */
     public Triangulo(int a, int b, int c) throws IllegalArgumentException {
+        this.a = a;
+        this.b = b;
+        this.c = c;
     }
 
     /**
@@ -28,6 +35,11 @@ public class Triangulo {
      * @return el tipo de este triángulo (equilátero, isósceles, escaleno).
      */
     public TipoTriangulo tipo() {
-        return null;
+        if (a == b && b == c){
+            return TipoTriangulo.EQUILATERO;
+        }
+        else{
+            return TipoTriangulo.ISOSCELES;
+        }
     }
 }
